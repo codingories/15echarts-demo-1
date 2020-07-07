@@ -104196,30 +104196,72 @@ var _echarts = _interopRequireDefault(require("echarts"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var main = document.getElementById('main'); // 基于准备好的dom，初始化echarts实例
+var main = document.getElementById('main');
+var loadMoreButton = document.getElementById('loadMore'); // 基于准备好的dom，初始化echarts实例
 
-var myChart = _echarts.default.init(main, 'default'); // 指定图表的配置项和数据
+var myChart = _echarts.default.init(main, 'default');
+
+var n = 0;
+var m = 0;
+
+function createKey() {
+  n += 1;
+  return "2020-1-".concat(n);
+}
+
+function createValue() {
+  m += 1;
+  return m;
+} // 指定图表的配置项和数据
 
 
-var option = {
+var xData = [createKey(), createKey(), createKey(), createKey(), createKey(), createKey()];
+var values = [createValue(), createValue(), createValue(), createValue(), createValue(), createValue()]; // 使用刚指定的配置项和数据显示图表。
+
+myChart.setOption({
+  title: {
+    show: true,
+    text: '销量',
+    right: 0
+  },
   legend: {
-    data: ['Bug数']
+    data: ['金额']
   },
   xAxis: {
     type: 'category',
-    data: ['1', '2', '3', '4', '5', '6']
+    data: xData
   },
   yAxis: {
     type: 'value'
   },
+  tooltip: {
+    show: true
+  },
   series: [{
-    name: 'Bug数',
-    data: [820, 932, 901, 934, 1290, 1330, 1320],
+    lineStyle: {
+      color: 'blue'
+    },
+    itemStyle: {
+      borderWidth: 10
+    },
+    name: '金额',
+    data: values,
     type: 'line'
   }]
-}; // 使用刚指定的配置项和数据显示图表。
-
-myChart.setOption(option);
+});
+loadMoreButton.addEventListener('click', function () {
+  var key = createKey();
+  var value = createValue();
+  console.log(key, value);
+  myChart.setOption({
+    xAxis: {
+      data: [].concat(xData, [key])
+    },
+    series: [{
+      data: [].concat(values, [value])
+    }]
+  });
+});
 },{"echarts":"../node_modules/echarts/index.js"}],"../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
