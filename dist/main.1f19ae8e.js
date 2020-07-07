@@ -104287,6 +104287,12 @@ loadMoreButton.addEventListener('click', function () {
     isLoading = false;
   }, 3000);
 });
+myChart.on('click', function (e) {
+  console.log(e);
+  console.log(e.dataIndex);
+  console.log(e.name);
+  console.log(e.data);
+});
 },{"echarts":"../node_modules/echarts/index.js"}],"../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

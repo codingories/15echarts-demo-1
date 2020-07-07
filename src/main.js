@@ -80,7 +80,11 @@ loadMoreButton.addEventListener('click', () => {
       isLoading = false
     },3000
   )
-
-
 })
 
+myChart.on('click',(e)=>{
+  console.log(e)
+  console.log(e.dataIndex)
+  console.log(e.name)
+  console.log(e.data)
+})
