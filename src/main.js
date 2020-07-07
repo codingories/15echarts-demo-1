@@ -1,7 +1,12 @@
 import echarts from 'echarts'
 
+
 const main = document.getElementById('main')
 const loadMoreButton = document.getElementById('loadMore')
+// 获取屏幕宽度
+const width = document.documentElement.clientWidth
+main.style.width = `${width}px`
+main.style.height = `${width * 1.2}px`
 
 // 基于准备好的dom，初始化echarts实例
 var myChart = echarts.init(main, 'default');
@@ -24,35 +29,51 @@ let xData = [createKey(), createKey(), createKey(), createKey(), createKey(), cr
 let values = [createValue(), createValue(), createValue(), createValue(), createValue(), createValue()]
 // 使用刚指定的配置项和数据显示图表。
 myChart.setOption({
-  title: {
-    show: true,
-    text: '销量',
-    right: 0,
-  },
-  legend: {
-    data: ['金额']
-  },
-  xAxis: {
-    type: 'category',
-    data: xData
-  },
-  yAxis: {
-    type: 'value'
-  },
-  tooltip: {
-    show: true,
-  },
-  series: [{
-    lineStyle: {
-      color: 'blue'
+  baseOption: {
+    title: {
+      show: true,
+      text: '销量',
+      right: 30,
     },
-    itemStyle: {
-      borderWidth: 10
+    legend: {
+      data: ['金额']
     },
-    name: '金额',
-    data: values,
-    type: 'line'
-  }]
+    xAxis: {
+      type: 'category',
+      data: xData
+    },
+    yAxis: {
+      type: 'value'
+    },
+    tooltip: {
+      show: true,
+    },
+    series: [{
+      lineStyle: {
+        color: 'blue'
+      },
+      itemStyle: {
+        borderWidth: 10
+      },
+      name: '金额',
+      data: values,
+      type: 'line'
+    }]
+  },
+  media: [
+    {
+      query: {
+        maxWidth: 500
+      },
+      option: {
+        series: [{
+          itemStyle: {
+            borderWidth: 40
+          },
+        }]
+      }
+    }
+  ]
 });
 
 let isLoading = false
@@ -78,7 +99,7 @@ loadMoreButton.addEventListener('click', () => {
       })
       myChart.hideLoading()
       isLoading = false
-    },3000
+    },500
   )
 })
 
