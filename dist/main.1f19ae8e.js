@@ -104196,8 +104196,9 @@ var _echarts = _interopRequireDefault(require("echarts"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// 基于准备好的dom，初始化echarts实例
-var myChart = _echarts.default.init(document.getElementById('main')); // 指定图表的配置项和数据
+var main = document.getElementById('main'); // 基于准备好的dom，初始化echarts实例
+
+var myChart = _echarts.default.init(main, 'default'); // 指定图表的配置项和数据
 
 
 var option = {
