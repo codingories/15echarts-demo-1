@@ -104261,20 +104261,31 @@ myChart.setOption({
     type: 'line'
   }]
 });
+var isLoading = false;
 loadMoreButton.addEventListener('click', function () {
-  var key = createKey();
-  var value = createValue();
-  xData = [].concat(_toConsumableArray(xData), [key]);
-  values = [].concat(_toConsumableArray(values), [value]);
-  console.log(key, value);
-  myChart.setOption({
-    xAxis: {
-      data: xData
-    },
-    series: [{
-      data: values
-    }]
-  });
+  if (isLoading === true) {
+    return;
+  }
+
+  myChart.showLoading();
+  isLoading = true;
+  setTimeout(function () {
+    var key = createKey();
+    var value = createValue();
+    xData = [].concat(_toConsumableArray(xData), [key]);
+    values = [].concat(_toConsumableArray(values), [value]);
+    console.log(key, value);
+    myChart.setOption({
+      xAxis: {
+        data: xData
+      },
+      series: [{
+        data: values
+      }]
+    });
+    myChart.hideLoading();
+    isLoading = false;
+  }, 3000);
 });
 },{"echarts":"../node_modules/echarts/index.js"}],"../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

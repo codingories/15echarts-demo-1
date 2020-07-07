@@ -55,20 +55,32 @@ myChart.setOption({
   }]
 });
 
+let isLoading = false
+
 loadMoreButton.addEventListener('click', () => {
-  let key = createKey()
-  let value = createValue()
-  xData = [...xData, key]
-  values = [...values, value]
-  console.log(key, value)
-  myChart.setOption({
-    xAxis: {
-      data: xData
-    },
-    series: [{
-      data: values
-    }]
-  })
+  if(isLoading === true){return}
+  myChart.showLoading()
+  isLoading = true
+  setTimeout(
+    ()=>{
+      let key = createKey()
+      let value = createValue()
+      xData = [...xData, key]
+      values = [...values, value]
+      console.log(key, value)
+      myChart.setOption({
+        xAxis: {
+          data: xData
+        },
+        series: [{
+          data: values
+        }]
+      })
+      myChart.hideLoading()
+      isLoading = false
+    },3000
+  )
+
 
 })
 
