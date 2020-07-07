@@ -20,8 +20,8 @@ function createValue() {
 
 // 指定图表的配置项和数据
 
-const xData = [createKey(), createKey(), createKey(), createKey(), createKey(), createKey()]
-const values = [createValue(), createValue(), createValue(), createValue(), createValue(), createValue()]
+let xData = [createKey(), createKey(), createKey(), createKey(), createKey(), createKey()]
+let values = [createValue(), createValue(), createValue(), createValue(), createValue(), createValue()]
 // 使用刚指定的配置项和数据显示图表。
 myChart.setOption({
   title: {
@@ -58,13 +58,15 @@ myChart.setOption({
 loadMoreButton.addEventListener('click', () => {
   let key = createKey()
   let value = createValue()
+  xData = [...xData, key]
+  values = [...values, value]
   console.log(key, value)
   myChart.setOption({
     xAxis: {
-      data: [...xData,  key]
+      data: xData
     },
     series: [{
-      data: [...values, value]
+      data: values
     }]
   })
 
