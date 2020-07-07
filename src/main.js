@@ -5,21 +5,23 @@ var myChart = echarts.init(document.getElementById('main'));
 
 // 指定图表的配置项和数据
 var option = {
-
-  tooltip: {},
   legend: {
     data:['Bug数']
   },
   xAxis: {
-    data: ["小张","小王","老王","小吴"]
+    type: 'category',
+    data: ['1', '2', '3', '4', '5', '6']
   },
-  yAxis: {},
+  yAxis: {
+    type: 'value'
+  },
   series: [{
     name: 'Bug数',
-    type: 'bar',
-    data: [5, 20, 36, 10]
+    data: [820, 932, 901, 934, 1290, 1330, 1320],
+    type: 'line'
   }]
 };
+
 
 // 使用刚指定的配置项和数据显示图表。
 myChart.setOption(option);

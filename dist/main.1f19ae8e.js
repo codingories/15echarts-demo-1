@@ -104201,18 +104201,20 @@ var myChart = _echarts.default.init(document.getElementById('main')); // 指定�
 
 
 var option = {
-  tooltip: {},
   legend: {
     data: ['Bug数']
   },
   xAxis: {
-    data: ["小张", "小王", "老王", "小吴"]
+    type: 'category',
+    data: ['1', '2', '3', '4', '5', '6']
   },
-  yAxis: {},
+  yAxis: {
+    type: 'value'
+  },
   series: [{
     name: 'Bug数',
-    type: 'bar',
-    data: [5, 20, 36, 10]
+    data: [820, 932, 901, 934, 1290, 1330, 1320],
+    type: 'line'
   }]
 }; // 使用刚指定的配置项和数据显示图表。
 
@@ -104245,7 +104247,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53285" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54208" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
