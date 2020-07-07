@@ -2,6 +2,7 @@
   <div>
     <h1>如何在vue中使用echarts</h1>
     <vue-echarts :option="option"></vue-echarts>
+    <button @click="loadMore">加载更多</button>
   </div>
 
 </template>
@@ -38,6 +39,18 @@
         }
       }
     },
-    components: {VueEcharts}
+    components: {VueEcharts},
+    methods: {
+      loadMore(){
+        this.option = {
+          xAxis: {
+            data: ['2020-1-1','2020-1-2','2020-1-3']
+          },
+          series: [{
+            data: [1,2,3]
+          }]
+        }
+      }
+    }
   }
 </script>

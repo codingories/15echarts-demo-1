@@ -14,6 +14,12 @@
       this.$refs.container.style.height = `${(width -20) * 1.2}px`
       this.chart = echarts.init(this.$refs.container, 'dark')
       this.chart.setOption(this.option)
+    },
+    watch: {
+      option(){
+        console.log(this.option)
+        this.chart.setOption(this.option)
+      }
     }
   }
 </script>
