@@ -1,8 +1,12 @@
 {
   "dependencies": {
-    "echarts": "^4.8.0"
+    "echarts": "^4.8.0",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@types/echarts": "^4.6.3"
+    "@types/echarts": "^4.6.3",
+    "@types/vue": "^2.0.0",
+    "@vue/component-compiler-utils": "^3.1.2",
+    "vue-template-compiler": "^2.6.11"
   }
 }
