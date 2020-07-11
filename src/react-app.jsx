@@ -30,20 +30,25 @@ export function ReactApp() {
       }]
     }
   )
+  const [loading, setLoading] = useState(false)
   const onClick = ()=> {
-    setOption({
-      xAxis: {
-        data: ['2020-1-1','2020-1-2','2020-1-3']
-      },
-      series: [{
-        data: [1,2,3]
-      }]
-    })
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+      setOption({
+        xAxis: {
+          data: ['2020-1-1','2020-1-2','2020-1-3']
+        },
+        series: [{
+          data: [1,2,3]
+        }]
+      })
+    },3000)
   }
   return (
     <div>
       <h1>我来在React里面使用Echarts</h1>
-      <ReactEcharts option={option}/>
+      <ReactEcharts option={option} loading={loading}/>
       <button onClick={onClick}>点击加载更多</button>
     </div>
   )
