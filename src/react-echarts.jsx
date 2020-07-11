@@ -2,8 +2,9 @@ import React, {useEffect, useRef,props} from 'react'
 import echarts from 'echarts'
 
 export function ReactEcharts(props){
-  const container = useRef(null)
   const chart = useRef(null)
+  const container = useRef(null)
+
   const {option,loading} = props
   useEffect(()=>{
     const width = document.documentElement.clientWidth
@@ -22,5 +23,6 @@ export function ReactEcharts(props){
       chart.current.hideLoading()
     }
   },[loading])
-  return (<div ref={container}/>)
+
+  return (<div ref={container} style={{'border':'5px solid red'}}/>)
 }
