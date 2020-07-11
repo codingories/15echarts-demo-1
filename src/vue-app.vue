@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>如何在vue中使用echarts</h1>
-    <vue-echarts :option="option"></vue-echarts>
+    <vue-echarts :option="option" :loading="loading"></vue-echarts>
     <button @click="loadMore">加载更多</button>
   </div>
 
@@ -12,6 +12,7 @@
   export default {
     data(){
       return {
+        loading: false,
         option: {
           title: {
             show: true,
@@ -42,14 +43,18 @@
     components: {VueEcharts},
     methods: {
       loadMore(){
-        this.option = {
-          xAxis: {
-            data: ['2020-1-1','2020-1-2','2020-1-3']
-          },
-          series: [{
-            data: [1,2,3]
-          }]
-        }
+        this.loading  = true
+        setTimeout(()=>{
+          this.loading = false
+          this.option = {
+            xAxis: {
+              data: ['2020-1-1','2020-1-2','2020-1-3']
+            },
+            series: [{
+              data: [1,2,3]
+            }]
+          }
+        },3000)
       }
     }
   }

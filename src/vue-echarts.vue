@@ -5,7 +5,7 @@
 <script>
   import echarts from 'echarts'
   export default {
-    props: ['option'],
+    props: ['option','loading'],
 
     mounted(){
       console.log(this.$refs.container)
@@ -19,6 +19,13 @@
       option(){
         console.log(this.option)
         this.chart.setOption(this.option)
+      },
+      loading(){
+        if(this.loading){
+          this.chart.showLoading()
+        }else{
+          this.chart.hideLoading()
+        }
       }
     }
   }

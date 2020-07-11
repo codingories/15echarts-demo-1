@@ -76946,7 +76946,7 @@ var ThemeRiverSeries = SeriesModel.extend({
 });
 var _default = ThemeRiverSeries;
 module.exports = _default;
-},{"../../model/Series":"../node_modules/echarts/lib/model/Series.js","../../data/helper/createDimensions":"../node_modules/echarts/lib/data/helper/createDimensions.js","../../data/helper/dimensionHelper":"../node_modules/echarts/lib/data/helper/dimensionHelper.js","../../data/List":"../node_modules/echarts/lib/data/List.js","zrender/lib/core/util":"../node_modules/zrender/lib/core/util.js","../../util/model":"../node_modules/echarts/lib/util/model.js","../../util/format":"../node_modules/echarts/lib/util/format.js","../../visual/LegendVisualProvider":"../node_modules/echarts/lib/visual/LegendVisualProvider.js"}],"../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
+},{"../../model/Series":"../node_modules/echarts/lib/model/Series.js","../../data/helper/createDimensions":"../node_modules/echarts/lib/data/helper/createDimensions.js","../../data/helper/dimensionHelper":"../node_modules/echarts/lib/data/helper/dimensionHelper.js","../../data/List":"../node_modules/echarts/lib/data/List.js","zrender/lib/core/util":"../node_modules/zrender/lib/core/util.js","../../util/model":"../node_modules/echarts/lib/util/model.js","../../util/format":"../node_modules/echarts/lib/util/format.js","../../visual/LegendVisualProvider":"../node_modules/echarts/lib/visual/LegendVisualProvider.js"}],"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -77344,7 +77344,7 @@ function createGridClipShape(rect, seriesModel, cb) {
 }
 
 module.exports = _default;
-},{"../../echarts":"../node_modules/echarts/lib/echarts.js","../line/poly":"../node_modules/echarts/lib/chart/line/poly.js","../../util/graphic":"../node_modules/echarts/lib/util/graphic.js","zrender/lib/core/util":"../node_modules/zrender/lib/core/util.js","../../data/DataDiffer":"../node_modules/echarts/lib/data/DataDiffer.js","process":"../../../../.config/yarn/global/node_modules/process/browser.js"}],"../node_modules/echarts/lib/chart/themeRiver/themeRiverLayout.js":[function(require,module,exports) {
+},{"../../echarts":"../node_modules/echarts/lib/echarts.js","../line/poly":"../node_modules/echarts/lib/chart/line/poly.js","../../util/graphic":"../node_modules/echarts/lib/util/graphic.js","zrender/lib/core/util":"../node_modules/zrender/lib/core/util.js","../../data/DataDiffer":"../node_modules/echarts/lib/data/DataDiffer.js","process":"../../../../../.config/yarn/global/node_modules/process/browser.js"}],"../node_modules/echarts/lib/chart/themeRiver/themeRiverLayout.js":[function(require,module,exports) {
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -104196,17 +104196,13 @@ var _echarts = _interopRequireDefault(require("echarts"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 var main = document.getElementById('main');
 var loadMoreButton = document.getElementById('loadMore'); // 获取屏幕宽度
@@ -104311,7 +104307,7 @@ myChart.on('click', function (e) {
   console.log(e.name);
   console.log(e.data);
 });
-},{"echarts":"../node_modules/echarts/index.js"}],"../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"echarts":"../node_modules/echarts/index.js"}],"../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -104339,7 +104335,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54208" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50816" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -104370,9 +104366,8 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else if (location.reload) {
-        // `location` global exists in a web worker context but lacks `.reload()` function.
-        location.reload();
+      } else {
+        window.location.reload();
       }
     }
 
@@ -104515,5 +104510,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
+},{}]},{},["../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
 //# sourceMappingURL=/main.1f19ae8e.js.map
