@@ -30,10 +30,21 @@ export function ReactApp() {
       }]
     }
   )
+  const onClick = ()=> {
+    setOption({
+      xAxis: {
+        data: ['2020-1-1','2020-1-2','2020-1-3']
+      },
+      series: [{
+        data: [1,2,3]
+      }]
+    })
+  }
   return (
     <div>
       <h1>我来在React里面使用Echarts</h1>
       <ReactEcharts option={option}/>
+      <button onClick={onClick}>点击加载更多</button>
     </div>
   )
 }
