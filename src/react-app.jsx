@@ -32,6 +32,11 @@ export function ReactApp() {
   )
   const [loading, setLoading] = useState(false)
   const onClick = ()=> {
+
+    if(loading){
+      return
+    }
+
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
